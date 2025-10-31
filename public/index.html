@@ -390,46 +390,6 @@
         </div>
     </div>
 
-    <script>
-        // Name Letter Animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const nameElement = document.querySelector('.name-letters');
-            if (nameElement) {
-                const name = nameElement.textContent;
-                nameElement.innerHTML = '';
-                
-                // Split name into letters and wrap each in a span
-                name.split('').forEach((letter, index) => {
-                    const span = document.createElement('span');
-                    span.className = 'letter';
-                    span.textContent = letter === ' ' ? '\u00A0' : letter; // Non-breaking space
-                    span.style.animationDelay = `${0.5 + index * 0.1}s`;
-                    nameElement.appendChild(span);
-                });
-            }
-        });
-
-        // Add letter drop keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes letterDrop {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-50px) rotateX(90deg);
-                }
-                50% {
-                    opacity: 0.7;
-                    transform: translateY(10px) rotateX(45deg);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0) rotateX(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-
     <script src="config.js"></script>
     <script type="module" src="script.js"></script>
 </body>

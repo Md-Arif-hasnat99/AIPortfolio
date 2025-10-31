@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close mobile menu when clicking on a link
+    // Close mobile menu when clicking on a nav link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             // Close mobile menu
@@ -202,6 +202,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetSection = document.querySelector(href);
                 if (targetSection) {
                     targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Smooth scrolling for all anchor links on the page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
@@ -371,19 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+
 
 function sendMessage() {
     const chatInput = document.getElementById('chat-input');

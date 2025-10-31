@@ -103,8 +103,10 @@ function initializeTheme() {
     
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
-        updateThemeIcon(true);
     }
+    
+    // Always update icon to reflect current state
+    updateThemeIcon(isDarkMode);
 }
 
 function toggleDarkMode() {
@@ -499,29 +501,6 @@ function showFormMessage(message, type) {
             }, 5000);
         }
     }
-}
-
-// Utility function to apply staggered fade-in animation to elements
-function applyStaggeredAnimation(elements, config = {}) {
-    const {
-        startOpacity = '0',
-        startTransform = 'translateY(50px)',
-        endOpacity = '1',
-        endTransform = 'translateY(0)',
-        transition = 'all 0.6s ease',
-        staggerDelay = 100
-    } = config;
-    
-    elements.forEach((element, index) => {
-        element.style.opacity = startOpacity;
-        element.style.transform = startTransform;
-        element.style.transition = transition;
-        
-        setTimeout(() => {
-            element.style.opacity = endOpacity;
-            element.style.transform = endTransform;
-        }, index * staggerDelay);
-    });
 }
 
 // Skills Animation on Scroll

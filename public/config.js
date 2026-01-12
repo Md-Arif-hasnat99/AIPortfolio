@@ -4,7 +4,7 @@
 
 const GEMINI_CONFIG = {
     // Replace this with your actual Gemini API key
-    API_KEY: 'AIzaSyDStmN50t3UN_xOS54GzSw-ufwb1wb3qFM',
+    API_KEY: 'your-actual-gemini-api-key-here',
     
     // Model configuration
     MODEL_NAME: 'gemini-1.5-flash',
@@ -81,3 +81,4 @@ Please respond as Arif's assistant, providing helpful information about his curr
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { GEMINI_CONFIG, PORTFOLIO_CONTEXT };
 }
+

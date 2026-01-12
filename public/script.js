@@ -7,7 +7,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebas
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDQ-wrghBpxrNkThr8Z3nwRWxW6HwYewOA",
+    apiKey: "your-actual-gemini-api-key-here",
     authDomain: "ai-portfolio-98f5d.firebaseapp.com",
     projectId: "ai-portfolio-98f5d",
     storageBucket: "ai-portfolio-98f5d.firebasestorage.app",
@@ -677,5 +677,6 @@ function initParallaxEffect() {
         profilePicture.style.transform = `translate(${-moveX}px, ${-moveY}px) scale(1.05)`;
     });
 }
+
 
 

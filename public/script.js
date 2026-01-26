@@ -89,11 +89,35 @@ function sendMessage() {
     getAIResponse(message);
 }
 
+function parseMarkdown(text) {
+    // Basic sanitization
+    let html = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+    // Bold (**text**)
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Italic (*text*)
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+    // Line breaks
+    html = html.replace(/\n/g, '<br>');
+
+    return html;
+}
+
 function addMessage(type, content) {
     const chatMessages = document.getElementById('chat-messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${type}-message`;
-    messageDiv.innerHTML = `<p>${content}</p>`;
+    
+    // Use parseMarkdown for bot messages to render formatting
+    // For user messages, we can also use it or just plain text.
+    // Let's use it for both for consistency.
+    messageDiv.innerHTML = `<p>${parseMarkdown(content)}</p>`;
+    
     chatMessages?.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Md Arif Hasnat Portfolio",
   "main": "script.js",
+  "type": "module",
   "dependencies": {
     "@google/generative-ai": "^0.24.1"
   },

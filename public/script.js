@@ -90,13 +90,72 @@ function sendMessage() {
 }
 
 function parseMarkdown(text) {
-    // Basic sanitization
+    if (!text) return '';
+
+    // Sanitization to prevent XSS
     let html = text
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
 
-    // Headers (### Text or ## Text) -> Bold Heading
+    // Table Parsing logic
+    const lines = html.split('\n');
+    let inTable = false;
+    let tableHtml = '';
+    let newLines = [];
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        
+        // Check for table row (starts and ends with |)
+        // Example: | Header 1 | Header 2 |
+        if (line.match(/^\|.*\|$/)) {
+            if (!inTable) {
+                // Potential start of a table
+                // Check if the next line is a separator line (e.g. |---|) to confirm
+                const nextLine = (lines[i + 1] || '').trim();
+                const isHeader = nextLine.match(/^\|[\s-:]+\|$/);
+
+                if (isHeader) {
+                    inTable = true;
+                    tableHtml = '<div class="table-container"><table><thead><tr>';
+                    const headers = line.split('|').filter(c => c).map(c => `<th>${c.trim()}</th>`).join('');
+                    tableHtml += headers + '</tr></thead><tbody>';
+                    i++; // Skip the next line (separator)
+                    continue; 
+                } else {
+                    // Not a table header, treat as normal text or handle simple table without header if needed
+                    // For now, treat as text if no separator follows
+                    newLines.push(line);
+                }
+            } else {
+                // Inside table - Process data row
+                 const cells = line.split('|').filter(c => c).map(c => `<td>${c.trim()}</td>`).join('');
+                 tableHtml += `<tr>${cells}</tr>`;
+            }
+        } else {
+            // Not a table line
+            if (inTable) {
+                // Close previous table
+                inTable = false;
+                tableHtml += '</tbody></table></div>';
+                newLines.push(tableHtml);
+                tableHtml = '';
+            }
+            newLines.push(line);
+        }
+    }
+    // Handle case where table ends at the very end of text
+    if (inTable) {
+        tableHtml += '</tbody></table></div>';
+        newLines.push(tableHtml);
+    }
+    
+    html = newLines.join('\n');
+
+    // --- Standard Markdown Parsing ---
+
+    // Headers (### Text)
     html = html.replace(/^#{2,3}\s+(.*$)/gim, '<strong>$1</strong>');
 
     // Bold (**text**)
@@ -105,14 +164,19 @@ function parseMarkdown(text) {
     // Italic (*text*)
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    // Lists (- item or * item) -> Bullet points with breaks
-    // We replace the list marker with a bullet and ensure newlines work
+    // Lists (- item or * item) -> Bullet points
     html = html.replace(/^\s*[-*]\s+(.*)$/gm, '• $1');
 
     // Code (`code`)
     html = html.replace(/`(.*?)`/g, '<code>$1</code>');
 
-    // Line breaks - Convert remaining newlines to <br>
+    // Line breaks (convert remaining newlines to <br>)
+    // Be careful not to break table HTML structure which might have newlines if we didn't strip them, 
+    // but our table logic collapsed rows into single strings in newLines array. 
+    // However, join('\n') put them back. We should avoid replacing \n inside HTML tags ideally.
+    // Simple fix: Replace \n that are NOT inside >...< tags? 
+    // Or just rely on the fact that table HTML lines are long strings.
+    
     html = html.replace(/\n/g, '<br>');
 
     return html;

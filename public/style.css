@@ -2810,3 +2810,42 @@ body.dark-mode .chat-success {
     text-align: center; /* Center text for mobile */
   }
 }
+
+/* Chat Markdown Table Styles */
+.message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.message th, 
+.message td {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.message th {
+  background: rgba(99, 102, 241, 0.1);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.message td {
+  color: var(--text-secondary);
+}
+
+.bot-message .message td {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.bot-message .message th {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

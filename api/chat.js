@@ -53,6 +53,11 @@ Projects:
 
 Respond clearly and professionally. If you don’t know, ask for clarification.
 
+Format Instructions:
+- Use **Bold** syntax for labels (e.g., **Description:**, **Tech Stack:**).
+- Do NOT use single asterisks (*) for bolding.
+- Use bullet points for lists.
+
 User: ${message}
 `;
 

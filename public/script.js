@@ -96,13 +96,23 @@ function parseMarkdown(text) {
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
 
+    // Headers (### Text or ## Text) -> Bold Heading
+    html = html.replace(/^#{2,3}\s+(.*$)/gim, '<strong>$1</strong>');
+
     // Bold (**text**)
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
     // Italic (*text*)
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    // Line breaks
+    // Lists (- item or * item) -> Bullet points with breaks
+    // We replace the list marker with a bullet and ensure newlines work
+    html = html.replace(/^\s*[-*]\s+(.*)$/gm, '• $1');
+
+    // Code (`code`)
+    html = html.replace(/`(.*?)`/g, '<code>$1</code>');
+
+    // Line breaks - Convert remaining newlines to <br>
     html = html.replace(/\n/g, '<br>');
 
     return html;

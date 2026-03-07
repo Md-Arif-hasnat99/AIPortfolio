@@ -1,3 +1,16 @@
+function handleDownloadCV() {
+  fetch("/cv.pdf")
+    .then((res) => res.blob())
+    .then((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Md_Arif_Hasnat_CV.pdf";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+}
+
 export default function HomeSection() {
   return (
     <section id="home">
@@ -43,6 +56,15 @@ export default function HomeSection() {
           <div className="text-center max-w-md mt-4">
             <p className="text-lg font-bold italic border-b-2 border-black/10 pb-2">"Playing the right cards in digital experiences."</p>
           </div>
+          <button
+            onClick={handleDownloadCV}
+            className="mt-2 inline-flex items-center gap-2 px-8 py-3 bg-black text-white font-black uppercase tracking-widest rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-150"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download CV
+          </button>
         </div>
       </main>
     </section>

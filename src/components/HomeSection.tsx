@@ -4,10 +4,10 @@ export default function HomeSection() {
       <main className="flex flex-col items-center justify-center px-8 relative min-h-[max(calc(100vh-73px),600px)] py-12 md:py-20">
         <div className="z-10 w-full max-w-6xl flex flex-col items-center gap-8 md:gap-12">
           <div className="text-center">
-            <h1 className="text-7xl sm:text-9xl md:text-[12rem] uno-heading-black leading-none select-none">UNO!</h1>
+            <h1 className="text-7xl sm:text-9xl md:text-[12rem] uno-heading-black leading-none select-none">&lt;ARIF/&gt;</h1>
             <div className="flex items-center justify-center gap-4 -mt-2 md:-mt-4">
               <div className="hidden sm:block h-1 w-10 md:w-20 bg-black"></div>
-              <p className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-black">Creative Developer</p>
+              <p className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-black">Full Stack Developer</p>
               <div className="hidden sm:block h-1 w-10 md:w-20 bg-black"></div>
             </div>
           </div>
@@ -24,7 +24,8 @@ export default function HomeSection() {
                       alt="Arif Hasnat" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Arif";
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='38' r='22' fill='%23cbd5e1'/%3E%3Cellipse cx='50' cy='90' rx='35' ry='25' fill='%23cbd5e1'/%3E%3C/svg%3E";
                       }}
                     />
                   </div>

@@ -1,9 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #f20d0d;
+  --color-background-light: #f8f5f5;
+  --color-background-dark: #221010;
+  --color-card-dark: #260a0a;
+  --color-uno-red: #ff5555;
+  --color-uno-blue: #5555ff;
+  --color-uno-green: #55aa55;
+  --color-uno-yellow: #ffaa00;
+  --color-off-white: #fcfcfc;
+
+  /* Fonts */
+  --font-display: "Spline Sans", sans-serif;
+  --font-handwriting: "Caveat", cursive;
+
+  /* Border radius */
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom utility classes and keyframe animations that extend Tailwind.
-   Tailwind itself is loaded via CDN in index.html along with Google Fonts. */
+/* Custom utility classes and keyframe animations */
 
 
 :root {
@@ -84,15 +110,6 @@ html {
 .accent-transition {
   transition: background-color 0.3s ease, border-color 0.3s ease,
     color 0.3s ease;
-}
-
-/* ─── Theme Switcher popup ─────────────────────────── */
-.theme-popup {
-  display: none;
-}
-.theme-switcher:hover .theme-popup,
-.theme-switcher:focus-within .theme-popup {
-  display: flex;
 }
 
 /* ─── Score Sheet / Notebook Paper ────────────────── */

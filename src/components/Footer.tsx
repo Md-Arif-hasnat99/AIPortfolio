@@ -20,8 +20,11 @@ export default function Footer() {
       </div>
       
       {/* Black Footer Bar */}
-      <div className="bg-black text-white py-8 px-10 text-center border-t-4 border-black">
-        <p className="text-sm font-bold uppercase tracking-[0.2em]">Designed for the Ultimate Play • © 2024</p>
+      <div className="bg-black py-8 px-10 border-t-4 border-black">
+        <div className="flex items-center justify-center gap-2">
+          <span className="text-lg font-black italic" style={{background: "linear-gradient(180deg, #ffaa00 0%, #ff5555 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"}}>Md Arif Hasnat</span>
+          <span className="text-gray-400 font-bold text-sm">© 2026</span>
+        </div>
       </div>
     </footer>
   );

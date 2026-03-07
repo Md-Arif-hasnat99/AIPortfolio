@@ -6,28 +6,27 @@ interface Skill {
   sublabel: string;
   name: string;
   sub: string;
+  icon: string;
+  iconBg: string;
+  iconFilter: string;
   bg: string;
   border: string;
   text: string;
 }
 
 const ALL_SKILLS: Skill[] = [
-  { id: 1,  label: 'FE', sublabel: 'FRONT', name: 'React',      sub: 'Library',   bg: 'bg-[#f20d0d]',   border: 'border-[#f20d0d]',   text: 'text-[#f20d0d]'   },
-  { id: 2,  label: 'BE', sublabel: 'BACK',  name: 'Node.js',    sub: 'Runtime',   bg: 'bg-green-500',   border: 'border-green-500',   text: 'text-green-600'   },
-  { id: 3,  label: 'DT', sublabel: 'DATA',  name: 'Python',     sub: 'Language',  bg: 'bg-yellow-400',  border: 'border-yellow-400',  text: 'text-yellow-600'  },
-  { id: 4,  label: 'CL', sublabel: 'CLOUD', name: 'AWS',        sub: 'Platform',  bg: 'bg-blue-600',    border: 'border-blue-600',    text: 'text-blue-600'    },
-  { id: 5,  label: 'UI', sublabel: 'STYLE', name: 'CSS',        sub: 'Styling',   bg: 'bg-cyan-500',    border: 'border-cyan-500',    text: 'text-cyan-600'    },
-  { id: 6,  label: 'FE', sublabel: 'FRONT', name: 'TypeScript', sub: 'Language',  bg: 'bg-[#f20d0d]',   border: 'border-[#f20d0d]',   text: 'text-[#f20d0d]'   },
-  { id: 7,  label: 'FE', sublabel: 'FRONT', name: 'Next.js',    sub: 'Framework', bg: 'bg-[#f20d0d]',   border: 'border-[#f20d0d]',   text: 'text-[#f20d0d]'   },
-  { id: 8,  label: 'BE', sublabel: 'BACK',  name: 'FastAPI',    sub: 'Framework', bg: 'bg-green-500',   border: 'border-green-500',   text: 'text-green-600'   },
-  { id: 9,  label: 'DT', sublabel: 'DATA',  name: 'Postgres',   sub: 'Database',  bg: 'bg-yellow-400',  border: 'border-yellow-400',  text: 'text-yellow-600'  },
-  { id: 10, label: 'CL', sublabel: 'CLOUD', name: 'Docker',     sub: 'Container', bg: 'bg-blue-600',    border: 'border-blue-600',    text: 'text-blue-600'    },
-  { id: 11, label: 'BE', sublabel: 'BACK',  name: 'Go',         sub: 'Language',  bg: 'bg-green-500',   border: 'border-green-500',   text: 'text-green-600'   },
-  { id: 12, label: 'DT', sublabel: 'DATA',  name: 'MongoDB',    sub: 'Database',  bg: 'bg-yellow-400',  border: 'border-yellow-400',  text: 'text-yellow-600'  },
-  { id: 13, label: 'CL', sublabel: 'CLOUD', name: 'Kubernetes', sub: 'Orchestr.', bg: 'bg-blue-600',    border: 'border-blue-600',    text: 'text-blue-600'    },
-  { id: 14, label: 'UI', sublabel: 'STYLE', name: 'Tailwind',   sub: 'Framework', bg: 'bg-cyan-500',    border: 'border-cyan-500',    text: 'text-cyan-600'    },
-  { id: 15, label: 'FE', sublabel: 'FRONT', name: 'Vue.js',     sub: 'Framework', bg: 'bg-[#f20d0d]',   border: 'border-[#f20d0d]',   text: 'text-[#f20d0d]'   },
-  { id: 16, label: 'BE', sublabel: 'BACK',  name: 'GraphQL',    sub: 'API',       bg: 'bg-green-500',   border: 'border-green-500',   text: 'text-green-600'   },
+  { id: 1,  label: 'FE', sublabel: 'FRONT', name: 'HTML',         sub: 'HTML',         icon: '/icons/html5.svg',        iconBg: '#E34F26', iconFilter: 'invert(1)',                                          bg: 'bg-[#E34F26]',  border: 'border-[#E34F26]',  text: 'text-[#E34F26]'  },
+  { id: 2,  label: 'UI', sublabel: 'STYLE', name: 'Tailwind CSS', sub: 'Tailwind CSS', icon: '/icons/tailwindcss.svg',  iconBg: '#06B6D4', iconFilter: 'invert(1)',                                          bg: 'bg-[#06B6D4]',  border: 'border-[#06B6D4]',  text: 'text-[#06B6D4]'  },
+  { id: 3,  label: 'FE', sublabel: 'FRONT', name: 'JavaScript',   sub: 'JavaScript',   icon: '/icons/javascript.svg',   iconBg: '#F7DF1E', iconFilter: 'none',                                               bg: 'bg-[#F7DF1E]',  border: 'border-[#F7DF1E]',  text: 'text-[#ca9f00]'  },
+  { id: 4,  label: 'FE', sublabel: 'FRONT', name: 'TypeScript',   sub: 'TypeScript',   icon: '/icons/typescript.svg',   iconBg: '#3178C6', iconFilter: 'invert(1)',                                          bg: 'bg-[#3178C6]',  border: 'border-[#3178C6]',  text: 'text-[#3178C6]'  },
+  { id: 5,  label: 'FE', sublabel: 'FRONT', name: 'React',        sub: 'React',        icon: '/icons/react.svg',         iconBg: '#61DAFB', iconFilter: 'none',     bg: 'bg-[#61DAFB]',  border: 'border-[#61DAFB]',  text: 'text-[#20232A]'  },
+  { id: 6,  label: 'BE', sublabel: 'BACK',  name: 'Node.js',      sub: 'Node.js',      icon: '/icons/nodedotjs.svg',    iconBg: '#339933', iconFilter: 'invert(1)',                                          bg: 'bg-[#339933]',  border: 'border-[#339933]',  text: 'text-[#339933]'  },
+  { id: 7,  label: 'FE', sublabel: 'FRONT', name: 'Next.js',      sub: 'Next.js',      icon: '/icons/nextdotjs.svg',    iconBg: '#000000', iconFilter: 'invert(1)',                                          bg: 'bg-[#111111]',  border: 'border-[#111111]',  text: 'text-[#555555]'  },
+  { id: 8,  label: 'BE', sublabel: 'BACK',  name: 'Java',         sub: 'Java',         icon: '/icons/icons8-java.svg',  iconBg: '#ffffff', iconFilter: 'none',                                               bg: 'bg-[#007396]',  border: 'border-[#007396]',  text: 'text-[#ffffff]'  },
+  { id: 9,  label: 'BE', sublabel: 'BACK',  name: 'Python',       sub: 'Python',       icon: '/icons/python.svg',        iconBg: '#3776AB', iconFilter: 'invert(1)',                                          bg: 'bg-[#3776AB]',  border: 'border-[#3776AB]',  text: 'text-[#3776AB]'  },
+  { id: 10, label: 'DB', sublabel: 'DATABASE',  name: 'PostgreSQL',   sub: 'PostgreSQL',   icon: '/icons/postgresql.svg',   iconBg: '#4169E1', iconFilter: 'invert(1)',                                          bg: 'bg-[#4169E1]',  border: 'border-[#4169E1]',  text: 'text-[#4169E1]'  },
+  { id: 11, label: 'DV', sublabel: 'TOOLS', name: 'Git',          sub: 'Git',          icon: '/icons/git.svg',           iconBg: '#F05032', iconFilter: 'invert(1)',                                          bg: 'bg-[#F05032]',  border: 'border-[#F05032]',  text: 'text-[#F05032]'  },
+  { id: 12, label: 'DV', sublabel: 'TOOLS', name: 'GitHub',       sub: 'GitHub',       icon: '/icons/github.svg',        iconBg: '#181717', iconFilter: 'invert(1)',                                          bg: 'bg-[#181717]',  border: 'border-[#181717]',  text: 'text-[#555555]'  },
 ];
 
 function SkillCard({ skill, size = 'lg' }: { skill: Skill; size?: 'lg' | 'sm' }) {
@@ -36,8 +35,11 @@ function SkillCard({ skill, size = 'lg' }: { skill: Skill; size?: 'lg' | 'sm' })
       <div className={`min-w-[140px] h-[200px] ${skill.bg} rounded-xl p-2.5 shadow-md flex flex-col justify-between border-[5px] border-white`}>
         <div className="text-white font-black text-lg">{skill.label}</div>
         <div className="flex-grow flex items-center justify-center">
-          <div className={`w-full h-20 bg-white rounded-3xl transform -rotate-12 flex items-center justify-center border-4 ${skill.border}`}>
-            <span className={`${skill.text} font-black text-base`}>{skill.name}</span>
+          <div className={`w-full h-20 bg-white rounded-3xl transform -rotate-12 flex flex-col items-center justify-center border-4 ${skill.border} gap-1`}>
+            <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{backgroundColor: skill.iconBg}}>
+              <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain" style={{filter: skill.iconFilter}} />
+            </div>
+            <span className={`${skill.text} font-black text-xs`}>{skill.name}</span>
           </div>
         </div>
         <div className="text-white font-black text-lg self-end transform rotate-180">{skill.label}</div>
@@ -55,9 +57,11 @@ function SkillCard({ skill, size = 'lg' }: { skill: Skill; size?: 'lg' | 'sm' })
       </div>
       <div className="flex-grow flex items-center justify-center relative z-10">
         <div className={`w-full h-64 bg-white rounded-[80px] transform -rotate-12 flex items-center justify-center shadow-[inset_0_4px_15px_rgba(0,0,0,0.1)] border-[8px] ${skill.border} group-hover:rotate-0 transition-transform duration-500`}>
-          <div className="text-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
-            <span className={`block ${skill.text} font-black text-5xl md:text-6xl tracking-tight drop-shadow-sm`}>{skill.name}</span>
-            <span className="block text-slate-500 font-bold text-base mt-2 uppercase tracking-widest">{skill.sub}</span>
+          <div className="text-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 flex flex-col items-center gap-3">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl flex items-center justify-center shadow-lg" style={{backgroundColor: skill.iconBg}}>
+              <img src={skill.icon} alt={skill.name} className="w-16 h-16 md:w-20 md:h-20 object-contain" style={{filter: skill.iconFilter}} />
+            </div>
+            <span className="block text-slate-700 font-black text-xl md:text-2xl tracking-tight">{skill.sub}</span>
           </div>
         </div>
       </div>
@@ -111,11 +115,9 @@ export default function SkillsSection() {
     <section id="skills" className="bg-white py-12 md:py-16">
       <div className="w-full max-w-[1400px] mx-auto px-4">
         {/* Header */}
-        <div className="w-full text-center mb-10 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">My Deck of Skills</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            A collection of technologies I use to build modern applications — click a card in hand to spotlight it, or deal the next one!
-          </p>
+        <div className="w-full text-center space-y-2 mb-10 md:mb-16">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl font-black italic tracking-tighter uno-logo-text border-8 border-black rounded-full px-8 md:px-12 py-3 md:py-4 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] uppercase">SKILLS</h2>
+          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-6">My Deck of Skills</p>
         </div>
 
         {/* ── Play Area ── */}
@@ -181,7 +183,7 @@ export default function SkillsSection() {
           </div>
 
           {/* ── My Hand — horizontal row ── */}
-          <div className="w-full bg-[#ffffe0] p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black">
+          <div className="w-fit max-w-full bg-[#ffffe0] p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black mx-auto">
             <div className="flex items-center justify-between mb-4 px-2">
               <h3 className="text-xl font-black uppercase tracking-tight text-black">My Hand</h3>
               <span className="text-sm font-bold text-black border-2 border-black px-3 py-1 rounded-full">

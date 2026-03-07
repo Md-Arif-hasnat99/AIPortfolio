@@ -15,10 +15,21 @@ export default function HomeSection() {
             <div className="card-3d-element w-72 h-[420px] bg-[var(--accent-color)] accent-transition rounded-[2rem] border-[12px] border-white shadow-[20px_40px_60px_-15px_rgba(0,0,0,0.3)] flex flex-col items-center justify-center relative overflow-hidden ring-4 ring-black">
               <div className="absolute top-4 left-4 text-white text-4xl font-black italic leading-none">U</div>
               <div className="absolute bottom-4 right-4 text-white text-4xl font-black italic leading-none rotate-180">U</div>
-              <div className="uno-card-white-oval w-[140%] h-[60%] absolute -rotate-[35deg] flex items-center justify-center">
-                <div className="rotate-[35deg] text-center px-6">
-                  <span className="text-[var(--accent-color)] accent-transition text-5xl font-black italic tracking-tighter block leading-tight">ALEX</span>
-                  <span className="text-[var(--accent-color)] accent-transition text-3xl font-bold uppercase tracking-widest block">SMITH</span>
+              <div className="uno-card-white-oval w-[140%] h-[60%] absolute -rotate-[35deg] flex items-center justify-center overflow-hidden">
+                <div className="rotate-[35deg] flex flex-col items-center justify-center">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-[var(--accent-color)] overflow-hidden mb-2 shadow-inner bg-white flex items-center justify-center">
+                    {/* The project will automatically pick up profile.png from your public folder */}
+                    <img 
+                      src="/profile.png" 
+                      alt="Arif Hasnat" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Arif";
+                      }}
+                    />
+                  </div>
+                  <span className="text-[var(--accent-color)] accent-transition text-3xl md:text-4xl font-black italic tracking-tighter block leading-tight">ARIF</span>
+                  <span className="text-[var(--accent-color)] accent-transition text-xl md:text-2xl font-bold uppercase tracking-widest block">HASNAT</span>
                 </div>
               </div>
             </div>

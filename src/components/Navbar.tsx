@@ -12,6 +12,7 @@ const sections = [
 export default function Navbar() {
   const [active, setActive] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isThemeOpen, setIsThemeOpen] = useState(false);
 
   // Highlight nav link based on which section is in view
   useEffect(() => {
@@ -78,10 +79,11 @@ export default function Navbar() {
         </nav>
 
         {/* Wild card theme switcher */}
-        <div className="relative theme-switcher group hidden md:block">
+        <div className="relative hidden md:block">
           <button
             aria-label="Switch Theme"
             className="relative w-10 h-14 rounded-md border-2 border-black wild-glow overflow-hidden bg-white flex flex-col items-center justify-center cursor-pointer focus:outline-none"
+            onClick={() => setIsThemeOpen(prev => !prev)}
           >
             <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
               <div className="bg-uno-red"></div>
@@ -93,25 +95,28 @@ export default function Navbar() {
               <span className="text-[8px] font-black italic leading-none">WILD</span>
             </div>
           </button>
-          <div className="theme-popup absolute top-full mt-4 right-0 bg-white/90 backdrop-blur-sm p-4 rounded-full border-2 border-black shadow-2xl flex items-center gap-3">
-            {[
-              { color: '#ff5555', glow: 'rgba(255,85,85,0.4)',  bg: 'bg-uno-red',    label: 'R' },
-              { color: '#5555ff', glow: 'rgba(85,85,255,0.4)',  bg: 'bg-uno-blue',   label: 'B' },
-              { color: '#55aa55', glow: 'rgba(85,170,85,0.4)',  bg: 'bg-uno-green',  label: 'G' },
-              { color: '#ffaa00', glow: 'rgba(255,170,0,0.4)',  bg: 'bg-uno-yellow', label: 'Y' },
-            ].map(({ color, glow, bg, label }) => (
-              <button
-                key={label}
-                className={`w-8 h-12 ${bg} rounded border-2 border-black hover:scale-110 transition-transform flex items-center justify-center`}
-                onClick={() => {
-                  document.documentElement.style.setProperty('--accent-color', color);
-                  document.documentElement.style.setProperty('--accent-glow', glow);
-                }}
-              >
-                <span className="text-white font-black italic text-[10px]">{label}</span>
-              </button>
-            ))}
-          </div>
+          {isThemeOpen && (
+            <div className="absolute top-full mt-3 right-0 bg-white/95 backdrop-blur-sm p-3 rounded-2xl border-2 border-black shadow-2xl flex items-center gap-3 z-50">
+              {[
+                { color: '#ff5555', glow: 'rgba(255,85,85,0.4)',  bg: 'bg-uno-red',    label: 'R' },
+                { color: '#5555ff', glow: 'rgba(85,85,255,0.4)',  bg: 'bg-uno-blue',   label: 'B' },
+                { color: '#55aa55', glow: 'rgba(85,170,85,0.4)',  bg: 'bg-uno-green',  label: 'G' },
+                { color: '#ffaa00', glow: 'rgba(255,170,0,0.4)',  bg: 'bg-uno-yellow', label: 'Y' },
+              ].map(({ color, glow, bg, label }) => (
+                <button
+                  key={label}
+                  className={`w-8 h-12 ${bg} rounded border-2 border-black hover:scale-110 transition-transform flex items-center justify-center`}
+                  onClick={() => {
+                    document.documentElement.style.setProperty('--accent-color', color);
+                    document.documentElement.style.setProperty('--accent-glow', glow);
+                    setIsThemeOpen(false);
+                  }}
+                >
+                  <span className="text-white font-black italic text-[10px]">{label}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Mobile Menu Toggle */}

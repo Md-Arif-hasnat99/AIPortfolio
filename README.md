@@ -49,6 +49,6 @@ To run this project locally, follow these steps:
 
 ### 🎨 Design Philosophy
 
-*"Why be standard when you can drop a +4?"*
+> *"Why be standard when you can drop a +4?"*
 
 The goal of this design was to break out of the standard "generic tech portfolio" mold. By utilizing heavily stylized borders, bright primary hex colors (`#ff5555`, `#5555ff`, `#55aa55`, `#ffaa00`), and interactive components directly themed after tabletop features, the site acts as an immediate showcase of frontend development capability *and* creative UX design.

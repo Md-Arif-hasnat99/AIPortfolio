@@ -1,88 +1,51 @@
-# 🚀 AI-Powered Developer Portfolio
+# UNO! Theme Developer Portfolio 🃏
 
-A modern, high-performance portfolio website featuring a **server-side AI Chatbot** powered by Google's Gemini Flash model. Built with vanilla HTML/CSS/JS for maximum speed and Vercel Serverless Functions for secure backend processing.
+Welcome to the ultimate **Wild Card** of developer portfolios! 
 
-![Portfolio Status](https://img.shields.io/badge/Status-Live-brightgreen) ![Tech](https://img.shields.io/badge/Tech-HTML%20%7C%20CSS%20%7C%20JS-blue) ![AI](https://img.shields.io/badge/AI-Gemini%20Flash-purple)
+This is a single-page, fully responsive and highly interactive developer portfolio built with a design system deeply inspired by the classic card game **UNO**. It combines playful aesthetics (like bold primary colors, thick black borders, tilted cards, and wild animations) with a professional presentation of skills, projects, and contact information.
 
-## ✨ Key Features
+## 🌟 Key Features
 
-- **🤖 Intelligent Chatbot**: A custom-trained AI assistant that answers questions about my skills, projects, and background using **Google Gemini 1.5 Flash**.
-- **⚡ High Performance**: optimized assets and zero framework overhead.
-- **🎨 Modern UI/UX**: Fully responsive design with glassmorphism, smooth scrolling, and scroll-triggered animations.
-- **🌓 Dark/Light Mode**: User preference persistance using LocalStorage.
-- **🛡️ Secure Backend**: API keys are hidden on the server side (Vercel Function), protecting them from exposure.
+*   **Responsive "Waterfall" Layout:** Seamlessly scrollable from top to bottom (Home → About → Skills → Projects → Contact) natively styled for every device width.
+*   **"Wild Card" Theme Switcher:** A globally accessible theme button that lets users dynamically switch the entire portfolio's accent color (Red, Blue, Green, or Yellow) just by "playing" a different color card!
+*   **Interactive "UNO Hand" Skills Deck:** A fully functional deck-drawing mini-game built right into the "Skills" section. Users can "Deal" skills directly into their hand, and "Reshuffle" the deck to restart!
+*   **Notebook & Score Sheet Aesthetics:** The 'About' and 'Contact' sections utilize custom CSS to perfectly mimic lined notebook paper and classic UNO score sheets.
+*   **Smooth Animations & Micro-Interactions:** Custom hover states, 3D tilted project cards (`transform-style: preserve-3d`), and deal animations to make the site feel like a physical tabletop game.
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+).
-- **Backend**: Node.js (Vercel Serverless Functions).
-- **AI Model**: Google Gemini (`gemini-flash-latest`).
-- **Deployment**: Vercel.
+This project was bootstrapped with modern, blazing fast tooling:
 
-## 📂 Project Structure
-
-```
-/
-├── api/
-│   └── chat.js         # Serverless function for AI Chat
-├── public/
-│   ├── index.html      # Main website
-│   ├── style.css       # Styles
-│   ├── script.js       # Frontend logic
-│   ├── images/         # Assets
-│   └── cv.pdf          # Resume
-├── .env                # Local Environment variables
-└── package.json        # Dependencies
-```
+*   **Framework:** React 18
+*   **Language:** TypeScript
+*   **Bundler:** Vite
+*   **Styling:** Tailwind CSS (v3) + Custom CSS Extenstions
+*   **Typography:** Google Fonts (`Spline Sans` for headers/UI, `Caveat` for handwriting elements, and `Material Symbols Outlined` for icons).
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+To run this project locally, follow these steps:
 
-```bash
-git clone https://github.com/Md-Arif-hasnat99/AIPortfolio.git
-cd AIPortfolio
-```
+1. Clone the repository:
+   ```bash
+   git clone [your-repo-link]
+   cd Portfolio
+   ```
 
-### 2. Install Dependencies
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. Start the development server (runs with Vite's HMR):
+   ```bash
+   npm run dev
+   ```
 
-### 3. Configure Environment Variables
+4. Open your browser and visit: `http://localhost:5173`
 
-Create a `.env` file in the root directory and add your Google Gemini API Key:
+## 🎨 Design Philosophy
 
-```env
-GEMINI_API_KEY=AIzaSy...your_key_here...
-```
+*"Why be standard when you can drop a +4?"* 
 
-### 4. Run Locally
-
-To start the local development server with API support:
-
-```bash
-npm run dev:local
-```
-
-Visit `http://localhost:3000` in your browser.
-
-## 🌐 Deployment
-
-This project is optimized for **Vercel**.
-
-1.  Push your code to GitHub.
-2.  Import the project in Vercel.
-3.  **Important**: Add your `GEMINI_API_KEY` in the Vercel Project Settings > Environment Variables.
-4.  Deploy!
-
-## 📬 Contact
-
-- **Email**: mdarifhasnat06@gmail.com
-- **GitHub**: [Md-Arif-hasnat99](https://github.com/Md-Arif-hasnat99)
-- **LinkedIn**: [Md Arif Hasnat](https://www.linkedin.com/in/md-arif-hasnat-57932b229/)
-
----
-
-_Built with ❤️ by Md Arif Hasnat_
+The goal of this design was to break out of the standard "generic tech portfolio" mold. By utilizing heavily stylized borders, bright primary hex colors (`#ff5555`, `#5555ff`, `#55aa55`, `#ffaa00`), and interactive components directly themed after tabletop features, the site acts as an immediate showcase of frontend development capability *and* creative UX design.

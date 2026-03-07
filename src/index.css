@@ -1,0 +1,260 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes and keyframe animations that extend Tailwind.
+   Tailwind itself is loaded via CDN in index.html along with Google Fonts. */
+
+
+:root {
+  --accent-color: #ff5555;
+  --accent-glow: rgba(255, 85, 85, 0.4);
+}
+
+/* ─── Typography ──────────────────────────────────── */
+.uno-heading-black {
+  color: black;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── UNO Logo / Gradient Text ────────────────────── */
+.uno-logo-text {
+  background: linear-gradient(180deg, #ffaa00 0%, #ff5555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 4px 4px 0px black, -1px -1px 0px black, 1px -1px 0px black,
+    -1px 1px 0px black, 1px 1px 0px black;
+}
+
+/* ─── 3D Card ──────────────────────────────────────── */
+.card-3d-container {
+  perspective: 1000px;
+}
+.card-3d-element {
+  transform: rotateX(10deg) rotateY(-20deg) rotateZ(5deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+}
+.card-3d-element:hover {
+  transform: rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ─── UNO Card shapes ──────────────────────────────── */
+.uno-card-white-oval {
+  background: white;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.uno-card-inner {
+  background: white;
+  border: 8px solid white;
+  box-shadow: 0 0 0 2px black;
+}
+.uno-logo-shape {
+  border-radius: 50% / 100% 100% 0 0;
+  transform: rotate(-2deg);
+}
+
+/* ─── Wild Card Button ─────────────────────────────── */
+.wild-card-btn {
+  background: conic-gradient(
+    from 45deg,
+    #ff5555 25%,
+    #5555ff 25% 50%,
+    #55aa55 50% 75%,
+    #ffaa00 75%
+  );
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px black;
+}
+
+/* ─── Glow ─────────────────────────────────────────── */
+.wild-glow {
+  box-shadow: 0 0 15px var(--accent-glow);
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+.accent-transition {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ─── Theme Switcher popup ─────────────────────────── */
+.theme-popup {
+  display: none;
+}
+.theme-switcher:focus-within .theme-popup {
+  display: flex;
+}
+
+/* ─── Score Sheet / Notebook Paper ────────────────── */
+.score-sheet-lines {
+  background-image: linear-gradient(#492222 1px, transparent 1px);
+  background-size: 100% 2.5rem;
+}
+.margin-line {
+  border-left: 2px solid #f20d0d;
+}
+.score-pad-bg {
+  background-color: #ffffe0;
+  background-image: linear-gradient(transparent 95%, black 5%);
+  background-size: 100% 2.5rem;
+}
+.score-pad-line {
+  background-image: linear-gradient(transparent 95%, black 5%);
+  background-size: 100% 2rem;
+  line-height: 2rem;
+}
+
+/* ─── Card Tilts ───────────────────────────────────── */
+.card-tilt-left {
+  transform: rotate(-10deg);
+}
+.card-tilt-right {
+  transform: rotate(10deg);
+}
+
+/* ─── Projects Page: Draw-2 pop-out cards ──────────── */
+.drawn-uno-card-base {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translate(0, 0) rotate(0) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  top: 2.5rem;
+}
+.project-card-container:hover .drawn-card-tech {
+  transform: translate(65%, -25%) rotate(15deg) scale(1);
+  opacity: 1;
+  z-index: 0;
+}
+.project-card-container:hover .drawn-card-feature {
+  transform: translate(85%, -10%) rotate(25deg) scale(1);
+  opacity: 1;
+  z-index: 0;
+}
+.wild-btn-transition {
+  transition: all 0.3s ease;
+}
+
+/* ─── Scrollbar ────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Page Entrance Animations ────────────────────── */
+.animate-card-dealt {
+  animation: card-dealt 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+}
+.animate-deal-card {
+  animation: dealCard 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+.animate-card-deal {
+  animation: cardDealEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+.animate-deal-in {
+  animation: deal-in 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  perspective: 1000px;
+  transform-origin: center bottom;
+}
+
+/* ─── @keyframes ───────────────────────────────────── */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+}
+
+@keyframes card-dealt {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotateX(45deg) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-20px) rotateX(-5deg) scale(1.02);
+  }
+  80% {
+    transform: translateY(10px) rotateX(2deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+  }
+}
+
+@keyframes dealCard {
+  0% {
+    transform: translateY(100vh) rotateX(45deg) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-20px) rotateX(-5deg) scale(1.02);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(10px) rotateX(2deg) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) rotateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cardDealEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotateX(20deg) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) rotateX(-5deg) scale(1.02);
+  }
+  80% {
+    transform: translateY(5px) rotateX(2deg) scale(0.99);
+  }
+  100% {
+    transform: translateY(0) rotateX(0) scale(1);
+  }
+}
+
+@keyframes deal-in {
+  0% {
+    transform: translateY(100vh) rotateX(20deg) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-20px) rotateX(-5deg) scale(1.02);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(10px) rotateX(2deg) scale(0.99);
+  }
+  100% {
+    transform: translateY(0) rotateX(0) scale(1);
+    opacity: 1;
+  }
+}

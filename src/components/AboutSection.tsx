@@ -1,3 +1,16 @@
+function handleDownloadCV() {
+  fetch("/cv.pdf")
+    .then((res) => res.blob())
+    .then((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Md_Arif_Hasnat_CV.pdf";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+}
+
 export default function AboutSection() {
   return (
     <section id="about" className="bg-white py-12 md:py-16">
@@ -48,7 +61,7 @@ export default function AboutSection() {
                     </div>
                   </section>
                   <div className="pt-16 space-y-6 max-w-xl mx-auto">
-                    <button className="w-full bg-uno-red text-white text-xl font-black uppercase tracking-widest py-4 rounded-xl border-4 border-white shadow-[0_0_0_2px_black,4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-[0_0_0_2px_black,2px_2px_0px_0px_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-3">
+                    <button onClick={handleDownloadCV} className="w-full bg-uno-red text-white text-xl font-black uppercase tracking-widest py-4 rounded-xl border-4 border-white shadow-[0_0_0_2px_black,4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-[0_0_0_2px_black,2px_2px_0px_0px_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-3">
                       <span className="material-symbols-outlined">download</span> DOWNLOAD SCORECARD (RESUME)
                     </button>
                     <button

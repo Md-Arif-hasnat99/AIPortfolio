@@ -1,51 +1,71 @@
 const projects = [
   {
     num: '01',
-    title: 'Cyber Deck Builder',
-    category: 'Game Development / Vue.js',
-    summary: 'A high-stakes strategy card game built with modern web technologies. Features real-time multiplayer.',
+    title: 'HostelSync',
+    category: 'Full Stack / Next.js 15',
+    summary: 'Enterprise-grade hostel management portal connecting students and admins. Features real-time complaint tracking, Supabase auth, PostgreSQL with RLS, and dynamic analytics.',
     techColor: 'bg-uno-blue',
     featColor: 'bg-uno-red',
     btnBorder: 'border-uno-red',
-    techIcon: 'javascript',
-    techLabel: 'Vue.js\nEngine',
-    featIcon: 'groups',
-    featLabel: 'Real-time\nPvP',
+    techIcon: 'dns',
+    techLabel: 'Next.js\n15',
+    featIcon: 'sync',
+    featLabel: 'Real-time\nSync',
     ghColor: 'bg-uno-blue',
-    liveColor: 'bg-uno-green',
+    liveLink: 'https://synchostel.vercel.app',
+    ghLink: 'https://github.com/Md-Arif-hasnat99/hostelsync',
     btnHover: 'hover:bg-uno-red',
   },
   {
     num: '02',
-    title: 'Color Switcher AI',
-    category: 'Machine Learning / Python',
-    summary: 'Neural network that predicts optimal color palettes based on user sentiment analysis.',
+    title: 'CollabFlow',
+    category: 'Full Stack / React + Firebase',
+    summary: 'Real-time Kanban project management workspace for remote teams. Features drag-and-drop boards, Firebase auth, role-based access, and live task sync across all clients.',
     techColor: 'bg-uno-yellow',
     featColor: 'bg-uno-green',
     btnBorder: 'border-uno-blue',
-    techIcon: 'psychology',
-    techLabel: 'TensorFlow\nPy',
-    featIcon: 'auto_fix_high',
-    featLabel: 'Smart\nPalettes',
+    techIcon: 'view_kanban',
+    techLabel: 'React\nFirebase',
+    featIcon: 'drag_indicator',
+    featLabel: 'Drag &\nDrop',
     ghColor: 'bg-uno-red',
-    liveColor: 'bg-uno-yellow',
+    liveLink: 'https://collab-flow-self.vercel.app',
+    ghLink: 'https://github.com/Md-Arif-hasnat99/Collab-Flow',
     btnHover: 'hover:bg-uno-blue',
   },
   {
     num: '03',
-    title: 'Wild Cloud Sync',
-    category: 'Infrastructure / Go',
-    summary: 'Distributed file synchronization service focusing on speed and zero-knowledge encryption.',
+    title: 'VibeStream',
+    category: 'ML / React + FastAPI + Python',
+    summary: 'Hybrid movie & music recommendation engine using SVD collaborative filtering and TF-IDF content-based algorithms. Features mood-sync playlists, TMDB/Spotify artwork, and Framer Motion UI.',
     techColor: 'bg-uno-green',
     featColor: 'bg-uno-blue',
     btnBorder: 'border-uno-green',
-    techIcon: 'terminal',
-    techLabel: 'Go\nRuntime',
-    featIcon: 'enhanced_encryption',
-    featLabel: 'Zero-K\nSync',
+    techIcon: 'psychology',
+    techLabel: 'ML\nEngine',
+    featIcon: 'music_note',
+    featLabel: 'Mood\nSync',
     ghColor: 'bg-uno-yellow',
-    liveColor: 'bg-uno-blue',
+    liveLink: 'https://vibe-stream-three.vercel.app',
+    ghLink: 'https://github.com/Md-Arif-hasnat99/VibeStream',
     btnHover: 'hover:bg-uno-green',
+  },
+  {
+    num: '04',
+    title: 'YojnaMitra',
+    category: 'Civic Tech / React + Supabase',
+    summary: 'Smart government scheme discovery platform for Indian citizens. Matches 50+ welfare schemes via a weighted eligibility algorithm. Bilingual (English + Hindi) with Supabase backend and RLS.',
+    techColor: 'bg-uno-red',
+    featColor: 'bg-uno-yellow',
+    btnBorder: 'border-uno-red',
+    techIcon: 'policy',
+    techLabel: 'Scheme\nMatch',
+    featIcon: 'translate',
+    featLabel: 'Bilingual\nUI',
+    ghColor: 'bg-uno-green',
+    liveLink: 'https://yojna-mitra-xi.vercel.app',
+    ghLink: 'https://github.com/Md-Arif-hasnat99/Yojna-Mitra',
+    btnHover: 'hover:bg-uno-red',
   },
 ];
 
@@ -58,8 +78,8 @@ export default function ProjectsSection() {
           <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-6">Gallery Score Sheet</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
-          {projects.map(({ num, title, category, summary, techColor, featColor, btnBorder, techIcon, techLabel, featIcon, featLabel, ghColor, liveColor, btnHover }) => (
-            <div key={num} className="project-card-container relative group transition-transform duration-300 hover:-translate-y-2">
+          {projects.map(({ num, title, category, summary, techColor, featColor, btnBorder, techIcon, techLabel, featIcon, featLabel, ghColor, liveLink, ghLink, btnHover }, index) => (
+            <div key={num} className={`project-card-container relative group transition-transform duration-300 hover:-translate-y-2${index === projects.length - 1 && projects.length % 3 !== 0 ? ' lg:col-start-2' : ''}`}>
               <div className={`drawn-uno-card-base drawn-card-tech w-40 h-60 ${techColor} border-4 border-black rounded-xl p-2 flex flex-col items-center justify-center text-center shadow-[6px_6px_0px_black]`}>
                 <div className={`uno-card-inner w-full h-full rounded-lg flex flex-col items-center justify-center p-2 relative overflow-hidden ${techColor}`}>
                   <span className="material-symbols-outlined text-white text-4xl z-10">{techIcon}</span>
@@ -92,15 +112,12 @@ export default function ProjectsSection() {
                     <p className="text-sm font-medium leading-relaxed mt-2 text-slate-700">{summary}</p>
                   </div>
                   <div className="space-y-4">
-                    <a className={`block w-full border-4 ${btnBorder} py-4 px-4 rounded-lg flex items-center justify-center group/btn wild-btn-transition ${btnHover}`} href="#">
+                    <a className={`block w-full border-4 ${btnBorder} py-4 px-4 rounded-lg flex items-center justify-center group/btn wild-btn-transition ${btnHover}`} href={liveLink} target="_blank" rel="noopener noreferrer">
                       <span className="bg-black text-white px-6 py-2 rounded-full border-2 border-white text-sm font-black uppercase tracking-widest transition-transform group-hover/btn:scale-105">VIEW PROJECT</span>
                     </a>
-                    <div className="flex justify-center gap-6 pt-4">
-                      <a className={`w-10 h-14 ${ghColor} border-2 border-black rounded-md flex items-center justify-center card-tilt-left shadow-[2px_2px_0px_black] hover:scale-110 transition-transform`} href="#">
-                        <span className="text-white text-xs font-black italic">GH</span>
-                      </a>
-                      <a className={`w-10 h-14 ${liveColor} border-2 border-black rounded-md flex items-center justify-center card-tilt-right shadow-[2px_2px_0px_black] hover:scale-110 transition-transform`} href="#">
-                        <span className="material-symbols-outlined text-white text-lg">link</span>
+                    <div className="flex justify-center pt-4">
+                      <a className={`w-10 h-14 ${ghColor} border-2 border-black rounded-md flex items-center justify-center shadow-[2px_2px_0px_black] hover:scale-110 transition-transform`} href={ghLink} target="_blank" rel="noopener noreferrer">
+                        <img src="/icons/github.svg" alt="GitHub" className="w-6 h-6" style={{filter: 'invert(1)'}} />
                       </a>
                     </div>
                   </div>

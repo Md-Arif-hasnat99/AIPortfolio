@@ -22,11 +22,12 @@ const ALL_SKILLS: Skill[] = [
   { id: 5,  label: 'FE', sublabel: 'FRONT', name: 'React',        sub: 'React',        icon: '/icons/react.svg',         iconBg: '#61DAFB', iconFilter: 'none',     bg: 'bg-[#61DAFB]',  border: 'border-[#61DAFB]',  text: 'text-[#20232A]'  },
   { id: 6,  label: 'BE', sublabel: 'BACK',  name: 'Node.js',      sub: 'Node.js',      icon: '/icons/nodedotjs.svg',    iconBg: '#339933', iconFilter: 'invert(1)',                                          bg: 'bg-[#339933]',  border: 'border-[#339933]',  text: 'text-[#339933]'  },
   { id: 7,  label: 'FE', sublabel: 'FRONT', name: 'Next.js',      sub: 'Next.js',      icon: '/icons/nextdotjs.svg',    iconBg: '#000000', iconFilter: 'invert(1)',                                          bg: 'bg-[#111111]',  border: 'border-[#111111]',  text: 'text-[#555555]'  },
-  { id: 8,  label: 'BE', sublabel: 'BACK',  name: 'Java',         sub: 'Java',         icon: '/icons/icons8-java.svg',  iconBg: '#ffffff', iconFilter: 'none',                                               bg: 'bg-[#007396]',  border: 'border-[#007396]',  text: 'text-[#ffffff]'  },
+  { id: 8,  label: 'BE', sublabel: 'BACK',  name: 'Java',         sub: 'Java',         icon: '/icons/icons8-java.svg',  iconBg: '#ffffff', iconFilter: 'none',                                               bg: 'bg-[#007396]',  border: 'border-[#007396]',  text: 'text-[#007396]'  },
   { id: 9,  label: 'BE', sublabel: 'BACK',  name: 'Python',       sub: 'Python',       icon: '/icons/python.svg',        iconBg: '#3776AB', iconFilter: 'invert(1)',                                          bg: 'bg-[#3776AB]',  border: 'border-[#3776AB]',  text: 'text-[#3776AB]'  },
   { id: 10, label: 'DB', sublabel: 'DATABASE',  name: 'PostgreSQL',   sub: 'PostgreSQL',   icon: '/icons/postgresql.svg',   iconBg: '#4169E1', iconFilter: 'invert(1)',                                          bg: 'bg-[#4169E1]',  border: 'border-[#4169E1]',  text: 'text-[#4169E1]'  },
   { id: 11, label: 'DV', sublabel: 'TOOLS', name: 'Git',          sub: 'Git',          icon: '/icons/git.svg',           iconBg: '#F05032', iconFilter: 'invert(1)',                                          bg: 'bg-[#F05032]',  border: 'border-[#F05032]',  text: 'text-[#F05032]'  },
   { id: 12, label: 'DV', sublabel: 'TOOLS', name: 'GitHub',       sub: 'GitHub',       icon: '/icons/github.svg',        iconBg: '#181717', iconFilter: 'invert(1)',                                          bg: 'bg-[#181717]',  border: 'border-[#181717]',  text: 'text-[#555555]'  },
+  { id: 13, label: 'DB', sublabel: 'DATABASE',  name: 'Supabase',     sub: 'Supabase',     icon: '/icons/supabase.svg',      iconBg: '#3ECF8E', iconFilter: 'invert(1)',                                          bg: 'bg-[#3ECF8E]',  border: 'border-[#3ECF8E]',  text: 'text-[#1a1a1a]'  },
 ];
 
 function SkillCard({ skill, size = 'lg' }: { skill: Skill; size?: 'lg' | 'sm' }) {
@@ -193,7 +194,7 @@ export default function SkillsSection() {
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider px-2 mb-4">
               Click a card to spotlight it
             </p>
-            <div className="flex flex-row overflow-x-auto no-scrollbar gap-6 pb-2 px-2 items-end">
+            <div className="flex flex-col sm:flex-row overflow-x-auto no-scrollbar gap-6 pb-2 px-2 items-center sm:items-end">
               {hand.map((skill, i) => (
                 <div
                   key={skill.id}

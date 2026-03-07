@@ -90,6 +90,7 @@ html {
 .theme-popup {
   display: none;
 }
+.theme-switcher:hover .theme-popup,
 .theme-switcher:focus-within .theme-popup {
   display: flex;
 }

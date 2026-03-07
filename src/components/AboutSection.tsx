@@ -43,7 +43,7 @@ export default function AboutSection() {
                       EDUCATION
                     </h3>
                     <div className="font-handwriting text-2xl md:text-3xl leading-[2.5rem] md:leading-[2.5rem] font-medium text-slate-900 -mt-1 relative z-10">
-                      <p className="text-black">Bachelor of Science in Computer Science</p>
+                      <p className="text-black">Bachelor of Technology in Computer Science and Engineering from 2023-2027</p>
                       <p className="text-uno-red font-bold">Techno Engineering College Banipur</p>
                     </div>
                   </section>

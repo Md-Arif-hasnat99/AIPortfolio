@@ -44,10 +44,8 @@ export default function AboutSection() {
                       MISSION LOG
                     </h3>
                     <p className="font-handwriting text-2xl md:text-3xl font-medium text-black leading-[2.5rem] md:leading-[2.5rem] -mt-1 relative z-10">
-                      Passionate full-stack developer with a knack for building intuitive and scalable web applications.
-                      Like a strategic game of UNO, I enjoy managing complex states and turning the tide with
-                      well-played solutions. I thrive in the "Wild Card" moments where creative problem-solving
-                      is the only way to win.
+                     Md Arif Hasnat
+Passionate full-stack developer with a knack for building intuitive, scalable, and user-centric web applications. Like a strategic game of UNO, I thrive on managing complex states, anticipating challenges, and turning the tide with well-played solutions. I live for the "Wild Card" moments where out-of-the-box thinking and creative problem-solving aren't just options — they're the only way to win. Always leveling up, always ready to deal the next move.
                     </p>
                   </section>
                   <section className="mt-[2.5rem]">

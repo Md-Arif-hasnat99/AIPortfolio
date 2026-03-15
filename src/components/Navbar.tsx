@@ -47,11 +47,12 @@ export default function Navbar() {
   return (
     <header className="flex items-center justify-between px-4 md:px-10 py-4 bg-white fixed top-0 left-0 right-0 w-full z-50 whitespace-nowrap shadow-sm">
       {/* Logo */}
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-12 bg-[var(--accent-color)] accent-transition border-2 border-black rounded-sm transform -rotate-12 flex items-center justify-center shadow-sm">
-          <span className="text-white text-[10px] font-black italic">U</span>
-        </div>
-        <h2 className="text-xl font-black italic uppercase tracking-tighter">Portfolio</h2>
+      <div className="flex items-center">
+        <img
+          src="/icons/Code-Bold--Streamline-Phosphor.svg"
+          alt="Portfolio"
+          className="h-8 w-8 md:h-9 md:w-9 object-contain shrink-0"
+        />
       </div>
 
       {/* Right side group: Nav links + Theme Switcher + Mobile Menu */}

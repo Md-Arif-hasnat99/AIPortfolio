@@ -113,12 +113,14 @@ export default function SkillsSection() {
   const pilesEmpty = drawPile.length === 0;
 
   return (
-    <section id="skills" className="bg-white py-12 md:py-16">
+    <section id="skills" className="bg-white py-12 md:py-16 scroll-mt-20">
       <div className="w-full max-w-[1400px] mx-auto px-4">
         {/* Header */}
-        <div className="w-full text-center space-y-2 mb-10 md:mb-16">
-          <h2 className="text-5xl sm:text-7xl md:text-8xl font-black italic tracking-tighter uno-logo-text border-8 border-black rounded-full px-8 md:px-12 py-3 md:py-4 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] uppercase">SKILLS</h2>
-          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-6">My Deck of Skills</p>
+        <div className="w-full text-center space-y-2 mb-10 md:mb-16 overflow-visible">
+          <div className="pb-4">
+            <h2 className="text-4xl sm:text-7xl md:text-8xl font-black italic tracking-tighter uno-logo-text border-4 md:border-8 border-black rounded-full px-6 md:px-12 py-2 md:py-4 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] uppercase">SKILLS</h2>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-2">My Deck of Skills</p>
         </div>
 
         {/* ── Play Area ── */}

@@ -4,8 +4,8 @@ export default function HomeSection() {
       <main className="flex flex-col items-center justify-center px-8 relative min-h-[max(calc(100vh-73px),600px)] py-12 md:py-20">
         <div className="z-10 w-full max-w-6xl flex flex-col items-center gap-8 md:gap-12">
           <div className="text-center">
-            <h1 className="text-7xl sm:text-9xl md:text-[12rem] uno-heading-black leading-none select-none">&lt;ARIF/&gt;</h1>
-            <div className="flex items-center justify-center gap-4 -mt-2 md:-mt-4">
+            <h1 className="text-5xl sm:text-9xl md:text-[12rem] uno-heading-black leading-none select-none">&lt;ARIF/&gt;</h1>
+            <div className="flex items-center justify-center gap-4 mt-2 md:-mt-4">
               <div className="hidden sm:block h-1 w-10 md:w-20 bg-black"></div>
               <p className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.5em] text-black">Full Stack Developer</p>
               <div className="hidden sm:block h-1 w-10 md:w-20 bg-black"></div>

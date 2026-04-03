@@ -31,11 +31,13 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="bg-white py-12 md:py-16">
+    <section id="contact" className="bg-white py-12 md:py-16 scroll-mt-20">
       <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 px-4 sm:px-8">
-        <div className="text-center space-y-2">
-          <h2 className="text-6xl sm:text-8xl md:text-9xl font-black italic tracking-tighter uno-logo-text border-8 border-black rounded-full px-6 md:px-8 py-2 bg-white inline-block shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">UNO!</h2>
-          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-widest mt-4">Score Sheet</p>
+        <div className="text-center space-y-2 overflow-visible">
+          <div className="pb-4">
+            <h2 className="text-6xl sm:text-8xl md:text-9xl font-black italic tracking-tighter uno-logo-text border-4 md:border-8 border-black rounded-full px-8 md:px-12 py-2 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">UNO!</h2>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-widest mt-2">Score Sheet</p>
         </div>
         <div className="w-full max-w-2xl bg-[#ffffe0] rounded-none p-6 sm:p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black relative overflow-hidden">
           <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-red-400"></div>

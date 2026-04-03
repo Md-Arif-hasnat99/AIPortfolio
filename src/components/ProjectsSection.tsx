@@ -67,15 +67,51 @@ const projects = [
     ghLink: 'https://github.com/Md-Arif-hasnat99/Yojna-Mitra',
     btnHover: 'hover:bg-uno-red',
   },
+  {
+    num: '05',
+    title: 'KarmaCommits',
+    category: 'Full Stack / Open Source Contribution Tracker',
+    summary: 'A specialized platform designed to streamline and gamify open-source contributions. Track commits, manage pull requests, and foster community engagement through a transparent reputation-based system.',
+    techColor: 'bg-uno-blue',
+    featColor: 'bg-uno-green',
+    btnBorder: 'border-uno-green',
+    techIcon: 'api',
+    techLabel: 'GitHub\nAPI',
+    featIcon: 'emoji_events',
+    featLabel: 'Karma\nRank',
+    ghColor: 'bg-uno-yellow',
+    liveLink: 'https://karma-commits.vercel.app/',
+    ghLink: 'https://github.com/sujitKrS04/karma-commits',
+    btnHover: 'hover:bg-uno-green',
+  },
+  {
+    num: '06',
+    title: 'ClearCue',
+    category: 'Full Stack / AI / Next.js 14',
+    summary: 'An interactive, AI-powered interview preparation platform that helps candidates refine their pitch. Uses Groq API to provide real-time, actionable feedback on tailored interview questions.',
+    techColor: 'bg-uno-yellow',
+    featColor: 'bg-uno-red',
+    btnBorder: 'border-uno-red',
+    techIcon: 'psychology',
+    techLabel: 'Groq\nAI Engine',
+    featIcon: 'mic',
+    featLabel: 'Mock\nInterviews',
+    ghColor: 'bg-uno-blue',
+    liveLink: 'https://clear-cue.vercel.app/',
+    ghLink: 'https://github.com/Md-Arif-hasnat99/ClearCue',
+    btnHover: 'hover:bg-uno-red',
+  },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="bg-white py-12 md:py-16">
+    <section id="projects" className="bg-white py-12 md:py-16 scroll-mt-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
-        <div className="text-center space-y-2 mb-10 md:mb-12">
-          <h2 className="text-5xl sm:text-7xl md:text-8xl font-black italic tracking-tighter uno-logo-text border-8 border-black rounded-full px-8 md:px-12 py-3 md:py-4 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] uppercase">Projects</h2>
-          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-6">Gallery Score Sheet</p>
+        <div className="text-center space-y-2 mb-10 md:mb-12 overflow-visible">
+          <div className="pb-4">
+            <h2 className="text-4xl sm:text-7xl md:text-8xl font-black italic tracking-tighter uno-logo-text border-4 md:border-8 border-black rounded-full px-6 md:px-12 py-2 md:py-4 bg-white inline-block shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] uppercase">Projects</h2>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-black uppercase tracking-[0.2em] md:tracking-[0.3em] mt-2">Gallery Score Sheet</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
           {projects.map(({ num, title, category, summary, techColor, featColor, btnBorder, techIcon, techLabel, featIcon, featLabel, ghColor, liveLink, ghLink, btnHover }, index) => (
